@@ -2,6 +2,7 @@
 #include <vector>  //Para usar vectores 
 #include "parser.hpp" //Incluimos la estructura Solicitud y la funcion leerCSV 
 #include "mergesort.hpp" //Incluimos la funcion mergeSort para ordenar las solicitudes por tenure
+#include "binary_search.hpp" //Incluimos la busqueda binaria recursiva exacta por tenure
 
 //El programa recibe argumentos desde la terminal
 //argv[0] guarda el nombre del ejecutable que sera: ./ada_pf
@@ -66,6 +67,37 @@ int main(int argc, char* argv[]) {
                   << " || Churn: " << solicitudes[i].churn
                   << std::endl;
     }
+
+    //Consultas del modulo A
+    //Ahora la busqueda debe encontrar tenure exactamente igual a k
+    std::vector<int> consultas = {72, 60, 45, 30, 12};
+
+    //Recorremos cada valor de k para probar la busqueda binaria
+    std::cout << "\nResultados de busqueda binaria exacta por tenure:\n";
+
+    for (int k : consultas) {
+        //Buscamos una solicitud cuyo tenure sea exactamente igual a k
+        //Si hay varias solicitudes con el mismo tenure, la funcion nos puede retornar cualquiera
+        int posicion = busquedaBinariaRecursivaExacta(
+            solicitudes,
+            0,
+            static_cast<int>(solicitudes.size()) - 1,
+            k
+        );
+
+        //Mostramos el resultado de la consulta actual
+        std::cout << "k = " << k << " -> ";
+
+        //Si posicion es diferente de -1 significa que encontramos una solicitud valida
+        if (posicion != -1) {
+            std::cout << "CustomerID: " << solicitudes[posicion].customerID
+                      << " || Tenure: " << solicitudes[posicion].tenure
+                      << std::endl;
+        } else {
+            std::cout << "No encontrado" << std::endl; //Si la posicion es -1 entonces no encontramos nigun tenure == k
+        }
+    }
+
 
     return 0;
 }
