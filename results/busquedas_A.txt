@@ -1,0 +1,17 @@
+MODULO A
+
+Registros cargados: 7043
+Registros con TotalCharges nulo: 11
+
+ANALISIS EMPIRICO DE MERGESORT
+n,tiempo_ms,nlogn_aprox
+1000,0.65,9965.78
+3500,2.65,41205.99
+7043,4.75,90023.45
+
+RESULTADOS DE BUSQUEDA BINARIA EXACTA POR TENURE
+Q_A01 k=72 -> CustomerID: 6904-JLBGY || Tenure: 72
+Q_A02 k=60 -> CustomerID: 7426-WEIJX || Tenure: 60
+Q_A03 k=45 -> CustomerID: 7925-PNRGI || Tenure: 45
+Q_A04 k=30 -> CustomerID: 2684-EIWEO || Tenure: 30
+Q_A05 k=12 -> CustomerID: 7450-NWRTR || Tenure: 12
