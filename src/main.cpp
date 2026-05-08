@@ -1,7 +1,7 @@
-//Metodo principal
 #include <iostream> //Mostrar resultados en pantalla 
 #include <vector>  //Para usar vectores 
 #include "parser.hpp" //Incluimos la estructura Solicitud y la funcion leerCSV 
+#include "mergesort.hpp" //Incluimos la funcion mergeSort para ordenar las solicitudes por tenure
 
 //El programa recibe argumentos desde la terminal
 //argv[0] guarda el nombre del ejecutable que sera: ./ada_pf
@@ -34,6 +34,30 @@ int main(int argc, char* argv[]) {
 
     //solicitudes.size() nos devuelve un size_t(tipo de tamaño de vectores), por eso lo convertimos a int con static_cast
     //Lo convertimos a int para evitar compararlo con size_t
+    for (int i = 0; i < 5 && i < static_cast<int>(solicitudes.size()); i++) {
+        std::cout << "CustomerID: " << solicitudes[i].customerID
+                  << " || Tenure: " << solicitudes[i].tenure
+                  << " || MonthlyCharges: " << solicitudes[i].monthlyCharges
+                  << " || TotalCharges: " << solicitudes[i].totalCharges
+                  << " || Churn: " << solicitudes[i].churn
+                  << std::endl;
+    }
+
+    //Verificamos que existan solicitudes antes de llamar a mergeSort
+    if (solicitudes.empty()) {
+        std::cout << "\nNo hay solicitudes para ordenar.\n"; 
+        return 1;//Si no existen solicitudes detenemos el programa
+    }
+
+    //Aplicamos MergeSort sobre el vector de solicitudes
+    //El ordenamiento lo hacemos por tenure de forma descendente
+    //Como solicitudes se pasa por referencia ordenamos directamente el vector original
+    mergeSort(solicitudes, 0, static_cast<int>(solicitudes.size()) - 1);
+
+    //Primeras solicitudes ya ordenadas por tenure
+    std::cout << "\nPrimeras solicitudes despues de ordenar por tenure descendente:\n";
+
+    //Volvemos a utilizar el mismo ciclo para verificar que ordenamos de forma correcta
     for (int i = 0; i < 5 && i < static_cast<int>(solicitudes.size()); i++) {
         std::cout << "CustomerID: " << solicitudes[i].customerID
                   << " || Tenure: " << solicitudes[i].tenure
