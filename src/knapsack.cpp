@@ -52,10 +52,9 @@ void ejecutarModuloC(const vector<Solicitud>& solicitudesOrdenadas) {
         //Solo se toman solicitudes activas, es decir Churn = No
         if (s.churn == "No") {
     
-            int peso = static_cast<int>(round(s.totalCharges));
-
+            int peso = static_cast<int>(round(s.totalCharges / 10.0));   // escalado para caber en W=500
             int valor = static_cast<int>(round(s.monthlyCharges * 10.0));
-
+            
             double ratio = 0.0;
             if (peso > 0) {
                 ratio = static_cast<double>(valor) / peso;
