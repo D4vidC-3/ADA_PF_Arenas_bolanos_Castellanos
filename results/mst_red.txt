@@ -1,0 +1,25 @@
+MODULO B - MST por Kruskal
+
+Nodos: 20 | Aristas en MST: 19
+Peso total del MST: 2393
+
+Aristas seleccionadas:
+Nodo 11 -- Nodo 17 | peso: 124
+Nodo 13 -- Nodo 17 | peso: 124
+Nodo 2 -- Nodo 17 | peso: 125
+Nodo 17 -- Nodo 19 | peso: 125
+Nodo 7 -- Nodo 17 | peso: 125
+Nodo 14 -- Nodo 17 | peso: 125
+Nodo 0 -- Nodo 17 | peso: 125
+Nodo 15 -- Nodo 17 | peso: 126
+Nodo 3 -- Nodo 17 | peso: 126
+Nodo 10 -- Nodo 17 | peso: 126
+Nodo 1 -- Nodo 17 | peso: 126
+Nodo 6 -- Nodo 17 | peso: 126
+Nodo 9 -- Nodo 17 | peso: 126
+Nodo 8 -- Nodo 17 | peso: 127
+Nodo 12 -- Nodo 17 | peso: 127
+Nodo 16 -- Nodo 17 | peso: 127
+Nodo 17 -- Nodo 18 | peso: 127
+Nodo 5 -- Nodo 17 | peso: 127
+Nodo 4 -- Nodo 17 | peso: 129
